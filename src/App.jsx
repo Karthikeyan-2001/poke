@@ -2,11 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { animate, motion, useMotionValue } from 'framer-motion'
 import BubbleWrap from './modes/BubbleWrap.jsx'
 import Keycaps from './modes/Keycaps.jsx'
+import SwitchSlider from './modes/SwitchSlider.jsx'
 import { ShakeContext, useCount } from './store.js'
 import { uiTick } from './audio.js'
 import { buzz, H } from './haptics.js'
 
-const MODES = [BubbleWrap, Keycaps]
+const MODES = [BubbleWrap, Keycaps, SwitchSlider]
 
 function Counter({ onLongPress }) {
   const count = useCount()
