@@ -4,6 +4,7 @@ import BubbleWrap from './modes/BubbleWrap.jsx'
 import Keycaps from './modes/Keycaps.jsx'
 import SwitchSlider from './modes/SwitchSlider.jsx'
 import Dial from './modes/Dial.jsx'
+import HapticsPanel from './HapticsPanel.jsx'
 import { ShakeContext, useCount } from './store.js'
 import { uiTick } from './audio.js'
 import { buzz, H } from './haptics.js'
@@ -209,6 +210,7 @@ export default function App() {
       </motion.div>
       <Counter onLongPress={() => setPanel(true)} />
       <ThemeToggle dark={dark} onToggle={toggleTheme} />
+      <HapticsPanel open={panel} onClose={() => setPanel(false)} />
       <Dots index={index} go={go} />
     </ShakeContext.Provider>
   )
