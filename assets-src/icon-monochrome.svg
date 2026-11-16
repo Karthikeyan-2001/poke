@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Android 13+ themed icon: single-colour silhouette (the system tints it). -->
+  <defs>
+    <mask id="m">
+      <!-- Launchers draw themed glyphs smaller than colour icons, so the silhouette is drawn larger. -->
+      <g transform="translate(512 512) scale(1.12) translate(-512 -512)">
+        <circle cx="512" cy="512" r="262" fill="#fff" />
+        <!-- the poke: a ring cut into the bubble -->
+        <circle cx="596" cy="560" r="80" fill="none" stroke="#000" stroke-width="30" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1024" height="1024" fill="#fff" mask="url(#m)" />
+</svg>

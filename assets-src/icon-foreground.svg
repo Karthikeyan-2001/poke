@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Glossy bubble, sized inside the adaptive-icon safe zone (66/108 of the canvas). -->
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30" />
+    </filter>
+    <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+    <radialGradient id="body" cx="36%" cy="30%" r="78%">
+      <stop offset="0" stop-color="#FFB089" />
+      <stop offset="0.35" stop-color="#FF7A48" />
+      <stop offset="0.75" stop-color="#EE5426" />
+      <stop offset="1" stop-color="#B8381A" />
+    </radialGradient>
+    <radialGradient id="rim" cx="50%" cy="50%" r="50%">
+      <stop offset="0.82" stop-color="#000" stop-opacity="0" />
+      <stop offset="1" stop-color="#7A1E08" stop-opacity="0.35" />
+    </radialGradient>
+    <radialGradient id="spec" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="0.6" stop-color="#FFFFFF" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <!-- Poke dimple: concave, so it's dark on the lit (upper-left) side and bright on the lower-right. -->
+    <linearGradient id="dimple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9E2E12" stop-opacity="0.75" />
+      <stop offset="0.55" stop-color="#E9562A" stop-opacity="0" />
+      <stop offset="1" stop-color="#FFC2A6" stop-opacity="0.85" />
+    </linearGradient>
+    <radialGradient id="dimpleEdge" cx="50%" cy="50%" r="50%">
+      <stop offset="0.7" stop-color="#000" stop-opacity="0" />
+      <stop offset="1" stop-color="#7A1E08" stop-opacity="0.25" />
+    </radialGradient>
+    <clipPath id="ball">
+      <circle cx="512" cy="512" r="262" />
+    </clipPath>
+  </defs>
+
+  <g transform="translate(512 512) scale(0.88) translate(-512 -512)">
+  <!-- neumorphic lift: warm shadow bottom-right, light glow top-left -->
+  <circle cx="548" cy="556" r="262" fill="#6E5A4A" opacity="0.38" filter="url(#soft)" />
+  <circle cx="480" cy="474" r="250" fill="#FFFFFF" opacity="0.9" filter="url(#soft)" />
+
+  <circle cx="512" cy="512" r="262" fill="url(#body)" />
+  <circle cx="512" cy="512" r="262" fill="url(#rim)" />
+
+  <g clip-path="url(#ball)">
+    <!-- bounce light along the lower-right edge -->
+    <path d="M700 520 A 200 200 0 0 1 520 712" stroke="#FFD2BC" stroke-width="34" stroke-linecap="round" fill="none" opacity="0.3" filter="url(#soft2)" />
+    <!-- the poke -->
+    <circle cx="596" cy="560" r="78" fill="url(#dimple)" />
+    <circle cx="596" cy="560" r="78" fill="url(#dimpleEdge)" />
+  </g>
+
+  <!-- specular highlights -->
+  <ellipse cx="408" cy="378" rx="118" ry="78" transform="rotate(-32 408 378)" fill="url(#spec)" />
+  <ellipse cx="386" cy="352" rx="40" ry="22" transform="rotate(-32 386 352)" fill="#FFFFFF" opacity="0.95" />
+  </g>
+</svg>
