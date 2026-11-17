@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { animate, motion, useMotionValue } from 'framer-motion'
+import { Capacitor } from '@capacitor/core'
 import BubbleWrap from './modes/BubbleWrap.jsx'
 import Keycaps from './modes/Keycaps.jsx'
 import SwitchSlider from './modes/SwitchSlider.jsx'
@@ -66,6 +67,36 @@ function ThemeToggle({ dark, onToggle }) {
         )}
       </svg>
     </motion.button>
+  )
+}
+
+const SITE = 'https://karthikeyanj.com'
+
+// In the Android app, navigating to an outside site hands it to the phone's browser
+// (the app stays open behind it); on the web it opens a new tab.
+function openSite() {
+  if (Capacitor.isNativePlatform()) window.location.href = SITE
+  else window.open(SITE, '_blank', 'noopener')
+}
+
+function Credit() {
+  return (
+    <a
+      href={SITE}
+      target="_blank"
+      rel="noopener"
+      onClick={(e) => {
+        e.preventDefault()
+        uiTick()
+        buzz(H.tick)
+        openSite()
+      }}
+      className="fixed z-20 flex h-8 flex-col justify-center text-[10px] leading-[1.25] tracking-wide text-soft no-underline opacity-75 active:opacity-100"
+      style={{ top: 'calc(env(safe-area-inset-top) + 14px)', left: 16, touchAction: 'manipulation' }}
+    >
+      <span>made for fun by</span>
+      <span className="font-semibold">Karthikeyan J</span>
+    </a>
   )
 }
 
@@ -210,6 +241,7 @@ export default function App() {
         </motion.div>
       </motion.div>
       <Counter onLongPress={() => setPanel(true)} />
+      <Credit />
       <ThemeToggle dark={dark} onToggle={toggleTheme} />
       <HapticsPanel open={panel} onClose={() => setPanel(false)} />
       <Dots index={index} go={go} />
