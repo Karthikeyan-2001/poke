@@ -12,7 +12,8 @@ Swipe or tap the dots to move between surfaces.
 2. **Mechanical keycaps** — a 3×3 grid of chunky switches with separate down/up strokes and a different "thock / tactile / clicky" profile per row.
 3. **Heavy switch & magnetic slider** — an industrial toggle that needs a deliberate drag and shakes the screen, plus a two-piece magnetic slider with center resistance and spring snapping.
 4. **Notched rotary dial** — a knurled knob with momentum and a ratchet tick every 15°.
-5. **The Boss** — a stress-relief punching bag in a suit:
+5. **Smash Shelf** — a pocket rage room: tap or swipe across plates, mugs, vases, wine glasses, bottles and light bulbs to shatter them (combos shake the screen); fresh ones drop onto the shelf forever.
+6. **The Boss** — a stress-relief punching bag in a suit:
    - tap to punch, swipe to slap, hold to charge a slow-motion haymaker, tap the nose to honk
    - throw props from the tray: paper, stapler, coffee, DENIED stamp, cream pie, keyboard, office chair
    - a rage meter with levels, fury-mode crits and comic hit words; fill it for a confetti meltdown, a "performance review", then a guided breathing cool-down

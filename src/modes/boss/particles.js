@@ -241,14 +241,14 @@ export function paperBits(sys, x, y, n, speed = 520) {
   }
 }
 
-export function shards(sys, x, y, n) {
+export function shards(sys, x, y, n, palette = ['#f4f1ea', '#f4f1ea', '#f4f1ea', '#d9d3c7']) {
   for (let i = 0; i < n; i++) {
     const a = -Math.PI / 2 + (R() - 0.5) * Math.PI * 1.8
     const v = 300 + R() * 650
     const s = 4 + R() * 8
     sys.add({
       t: 'shard', x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: 1500, drag: 0.5,
-      vr: (R() - 0.5) * 22, life: 1.4 + R() * 0.6, floor: true, color: R() < 0.75 ? '#f4f1ea' : '#d9d3c7',
+      vr: (R() - 0.5) * 22, life: 1.4 + R() * 0.6, floor: true, color: palette[(R() * palette.length) | 0],
       pts: [-s, -s * 0.4, s * (0.4 + R()), -s * R(), -s * 0.2, s * (0.5 + R())],
     })
   }

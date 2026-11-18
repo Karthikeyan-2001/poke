@@ -5,13 +5,14 @@ import BubbleWrap from './modes/BubbleWrap.jsx'
 import Keycaps from './modes/Keycaps.jsx'
 import SwitchSlider from './modes/SwitchSlider.jsx'
 import Dial from './modes/Dial.jsx'
+import Smash from './modes/Smash.jsx'
 import Boss from './modes/Boss.jsx'
 import HapticsPanel from './HapticsPanel.jsx'
 import { ShakeContext, useCount } from './store.js'
 import { uiTick } from './audio.js'
 import { buzz, H } from './haptics.js'
 
-const MODES = [BubbleWrap, Keycaps, SwitchSlider, Dial, Boss]
+const MODES = [BubbleWrap, Keycaps, SwitchSlider, Dial, Smash, Boss]
 
 function Counter({ onLongPress }) {
   const count = useCount()
